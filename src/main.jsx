@@ -5,7 +5,6 @@ import { RouterProvider } from 'react-router-dom'
 import { Provider } from 'react-redux'
 import { store } from './store/index'
 import { ToastContainer } from 'react-toastify'
-
 ReactDOM.createRoot(document.getElementById('root')).render(
   <Provider store={store}>
     <RouterProvider router={routers} />

@@ -37,28 +37,32 @@ const Transfer = () => {
     const handleTransfer = async (e) => {
         e.preventDefault()
         if (price > 0) {
-            try {
-                await dispatch(updateAccount({
-                    ...targetAccount,
-                    balance: targetAccount.balance + Number(price),
-                }))
-                await dispatch(updateAccount({
-                    ...account,
-                    balance: account.balance - Number(price),
-                    history: [
-                        ...account.history,
-                        {
-                            label: "انتقال",
-                            date: new Date().toLocaleString('fa-IR'),
-                            amount: price
-                        }]
-                }))
+            if (price < account.balance) {
+                try {
+                    await dispatch(updateAccount({
+                        ...targetAccount,
+                        balance: targetAccount.balance + Number(price),
+                    }))
+                    await dispatch(updateAccount({
+                        ...account,
+                        balance: account.balance - Number(price),
+                        history: [
+                            ...account.history,
+                            {
+                                label: "انتقال",
+                                date: new Date().toLocaleString('fa-IR'),
+                                amount: price
+                            }]
+                    }))
 
-                toast(`انتقال با موفقیت انجام شد`, { type: "success" })
-                navigate('/')
-            } catch (err) {
-                toast(`مشکلی وجود دارد لطفا مجددا اقدام فرمایید.`, { type: "error" })
-                console.log(err);
+                    toast(`انتقال با موفقیت انجام شد`, { type: "success" })
+                    navigate('/')
+                } catch (err) {
+                    toast(`مشکلی وجود دارد لطفا مجددا اقدام فرمایید.`, { type: "error" })
+                    console.log(err);
+                }
+            } else {
+                toast("موجودی کافی نیست.", { type: "warning" })
             }
         } else {
             toast("مبلغ را به درستی وارد کنید.", { type: "warning" })
