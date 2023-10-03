@@ -10,6 +10,7 @@ import Information from './../components/Information/Information';
 
 export const routers = createBrowserRouter([
     {
+        path: "/",
         element: <App />,
         errorElement: <NotFound />,
         children: [
@@ -37,6 +38,9 @@ export const routers = createBrowserRouter([
                 path: "/transfer",
                 element: <Transfer />
             },
-        ]
+        ],
+
     }
-])
+], {
+    basename: "/sky-wallet"
+})
