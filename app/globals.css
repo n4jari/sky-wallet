@@ -28,3 +28,12 @@ html {
 .suffix-input {
   @apply border-b border-t border-r border-slate-200 dark:border-slate-600 rounded-e px-3 py-1 bg-slate-100 dark:bg-slate-700 outline-none;
 }
+
+textarea,
+input[type="text"],
+input[type="button"],
+input[type="submit"],
+.input-checkbox {
+  appearance: none;
+  border-radius: 0;
+}
