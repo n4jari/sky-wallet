@@ -4,7 +4,6 @@ import "./globals.css";
 import { Header } from "@/components/header/Header";
 import Footer from "@/components/footer/Footer";
 import MainProvider from "@/context/MainContext";
-import {} from "@/types";
 import { Toaster } from "react-hot-toast";
 import { ReactNode } from "react";
 

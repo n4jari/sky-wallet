@@ -6,7 +6,7 @@ const Footer = () => {
       <p className="dark:text-slate-200">
         CREATED BY{" "}
         <a
-          href="https://n4jari.github.io/najari/"
+          href="https://n4jari.ir"
           className="text-sky-500"
           target="_blank"
         >
