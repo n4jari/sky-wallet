@@ -24,7 +24,7 @@ const Information = () => {
           </Suspense>
         </div>
       ) : (
-        <div className="card min-h-56">
+        <div className="card min-h-56 max-sm:flex-col">
           <p>First, sign in to your account.</p>
           <Link
             href={"/signUp"}
